@@ -1,0 +1,52 @@
+/* color */
+:root {
+  --GRAY900: #191919;
+  --GRAY500: #8E8E8E;
+  --GRAY100: #EBEBEB;
+  --RED500: #E85E36;
+}
+
+
+
+/* 캘린더 페이지 콘텐츠 스타일 */
+.calendar {
+  border: 1px solid #000;
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px;
+  color: var(--GRAY900);
+}
+/* 캘린더 헤더 스타일 */
+.header-calendar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-calendar {
+  border: 1px solid blue;
+}
+.days-container {
+  display: flex;
+  margin: 25px 0 10px;
+  color: var(--GRAY500);
+}
+.days-container .days {
+  border: 1px solid red;
+  /* padding: 10px 20px; */
+  width: calc(100%/7);
+  text-align: center;
+}
+.dates-container {
+  display: flex;
+  flex-flow: row wrap;
+  height: 500px;
+  border: 1px solid #333333;
+}
+
+.days-container .days:nth-child(7n+1),
+.dates-container .date:nth-child(7n+1) {
+  color: var(--RED500);
+}
