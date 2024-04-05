@@ -10,11 +10,14 @@
 <body>
   <section class="calendar">
     <div class="header-calendar">
-      <div class="year-month">2024년 4월 작업필요</div>
+      <!-- year-month 변수 처리 필요 -->
+      <div class="year-month">2024년 4월</div>
       <div class="nav-calendar">
         <button class="nav-btn go-prev">이전</button>
         <button class="nav-btn go-today">오늘</button>
-        <button class="nav-btn go-next">다음</button>
+        <button class="nav-btn go-next">
+          <i class="fas fa-chevron-right"></i>       
+        </button>
       </div>
     </div>
     <div class="main-calendar">
@@ -28,7 +31,15 @@
         <div class="days">토</div>
       </div>
       <!-- date -->
-      <div class="dates-container"></div>
+      <div class="date-container">
+        <div class="date-box"><span class="date-text">1</span></div>
+        <div class="date-box"><span class="date-text">2</span></div>
+        <div class="date-box"><span class="date-text">3</span></div>
+        <div class="date-box"><span class="date-text">4</span></div>
+        <div class="date-box"><span class="date-text">5</span></div>
+        <div class="date-box"><span class="date-text">6</span></div>
+        <div class="date-box"><span class="date-text">7</span></div>
+      </div>
     </div>
   </section>
 </body>

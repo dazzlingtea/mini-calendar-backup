@@ -1,3 +1,8 @@
+/* ================= 공통 사항 =============================== */
+/* font: Roboto, Noto Sans KR */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 /* color */
 :root {
   --GRAY900: #191919;
@@ -5,7 +10,11 @@
   --GRAY100: #EBEBEB;
   --RED500: #E85E36;
 }
+body {
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
 
+}
+/* =========================================================== */
 
 
 /* 캘린더 페이지 콘텐츠 스타일 */
@@ -18,26 +27,41 @@
   flex-direction: column;
   margin: 50px;
   color: var(--GRAY900);
+  font-size: 12px;
 }
 /* 캘린더 헤더 스타일 */
 .header-calendar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 1000px;
+  border: 1px solid violet;
 }
+.header-calendar .year-month {
+  font-size: 18px;
+  font-weight: 700;
+}
+.header-calendar .nav-btn i {
+  font-size: 16px;
+}
+
+/*  */
 .main-calendar {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 .days-container {
   display: flex;
-  margin: 25px 0 10px;
+  /* margin: 5px 0 5px; */
   color: var(--GRAY500);
 }
 .days-container .days {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   /* padding: 10px 20px; */
+  border-top: 1px solid var(--GRAY100);
+  border-right: 1px solid var(--GRAY100);
   width: calc(100%/7);
-  text-align: center;
+  padding: 2px 8px;
+  /* text-align: center; */
 }
 .dates-container {
   display: flex;
@@ -47,6 +71,21 @@
 }
 
 .days-container .days:nth-child(7n+1),
-.dates-container .date:nth-child(7n+1) {
+.date-container .date-box:nth-child(7n+1) {
   color: var(--RED500);
+  border-left: 1px solid var(--GRAY100);
+}
+.date-container {
+  display: flex;
+}
+
+.date-container .date-box {
+  border-bottom: 1px solid var(--GRAY100);
+  border-right: 1px solid var(--GRAY100);
+  width: 160px;
+  height: 120px;
+}
+.date-container .date-box .date-text {
+  font-size: 0.9em;
+  padding: 5px 10px 0;
 }

@@ -7,17 +7,17 @@ const renderCalendar = () => {
   document.querySelector('.year-month').textContent = `${viewYear}년 ${viewMonth + 1}월`;
 
   const prevLast = new Date(viewYear, viewMonth, 0);
-  const thisLast = new Date(viewYear, viewMonth + 1, 0);
+  const currLast = new Date(viewYear, viewMonth + 1, 0);
 
 
   const prevLastDate = prevLast.getDate();
   const prevLastDay = prevLast.getDay();
 
-  const thisLastDate = thisLast.getDate();
-  const thisLastDay = thisLast.getDay();
+  const currLastDate = currLast.getDate();
+  const currLastDay = currLast.getDay();
 
   const prevDates = [];
-  // const thisDates = [...]
+  // const currDates = [...]
   const nextDates = [];
 
   // 달력 합치기
