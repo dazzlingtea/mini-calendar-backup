@@ -50,7 +50,8 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 50px;
+  /* 헤더 병합 시 마진 삭제 */
+  margin: 64px 0 0;
   color: var(--GRAY900);
   font-size: 14px;
 }
@@ -61,13 +62,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1200px;
+  width: 100%;
   /* border: 1px solid violet; */
-  padding: 10px;
+  padding: 10px 50px;
 }
 .header-calendar .year-month {
   font-size: 20px;
   font-weight: 700;
+  padding-left: 50px;
 }
 
 .header-calendar .nav-calendar {
@@ -141,8 +143,7 @@ body {
 /* dates-container 스타일 (날짜) */
 .dates-container {
   display: flex;
-  flex-flow: row wrap;
-  height: 500px;
+  /* height: 500px; */
   border: 1px solid #333333;
 }
 
@@ -152,6 +153,7 @@ body {
   border-left: 1px solid var(--GRAY100);
 }
 .date-container {
+  flex-flow: row wrap;
   display: flex;
   width: 1400px;
 }
@@ -160,7 +162,8 @@ body {
   border-bottom: 1px solid var(--GRAY100);
   border-right: 1px solid var(--GRAY100);
   width: calc(100% / 7);
-  height: 150px;
+  height: 130px;
+  /* max-height: 130px; */
   position: relative;
   padding-top: 8px;
 }
@@ -188,4 +191,9 @@ body {
   left: 1px;
   top: 1px;
   color: #fff;
+}
+
+/* 이전, 다음 달은 비활성화 */
+.inactive {
+  opacity: 0.3;
 }
