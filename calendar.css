@@ -44,13 +44,13 @@ body {
 
 /* ====== 캘린더 페이지 콘텐츠 스타일 ====== */
 .calendar {
-  border: 1px solid yellowgreen;
+  /* border: 1px solid yellowgreen; */
   width: 1500px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 50px;
+  /* margin: 50px; */
   color: var(--GRAY900);
   font-size: 14px;
 }
@@ -152,6 +152,7 @@ body {
   border-left: 1px solid var(--GRAY100);
 }
 .date-container {
+  flex-flow: row wrap;
   display: flex;
   width: 1400px;
 }
@@ -160,7 +161,7 @@ body {
   border-bottom: 1px solid var(--GRAY100);
   border-right: 1px solid var(--GRAY100);
   width: calc(100% / 7);
-  height: 150px;
+  height: 130px;
   position: relative;
   padding-top: 8px;
 }
@@ -175,7 +176,7 @@ body {
 
 }
 /* 오늘 날짜 도형 */
-.circle {
+.today-circle {
   width: 25px;
   height: 25px;
   display: flex;
@@ -188,4 +189,8 @@ body {
   left: 1px;
   top: 1px;
   color: #fff;
+}
+/* 이전, 다음 달은 비활성화 */
+.inactive {
+  opacity: 0.3;
 }
