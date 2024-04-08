@@ -61,9 +61,10 @@ const generateDatesView = (year, month) => {
 
   // 지난 달 마지막 날짜와 요일,
   // 이번 달 마지막 날짜 구하기
+  // 이번 달 마지막 날짜 구하기
   const prevLastDate = prevLast.getDate();
   const prevLastDay = prevLast.getDay();
-
+  
   const currLastDate = currLast.getDate();
   // const currLastDay = currLast.getDay();
 
