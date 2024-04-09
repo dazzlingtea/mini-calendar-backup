@@ -1,0 +1,196 @@
+/* ================= 공통 사항 =============================== */
+/* common.css */
+@import url('/css/common.css');
+
+/* font: Roboto, Noto Sans KR */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* font awesome */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css');
+
+
+/* reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button, input {
+  outline: none;
+  border: none;
+  color: inherit;
+}
+
+/* common */
+*{
+  box-sizing: border-box;
+}
+
+/* color */
+:root {
+  --GRAY900: #191919;
+  --GRAY700: #666;
+  --GRAY500: #8E8E8E;
+  --GRAY300: #CCC;
+  --GRAY100: #EBEBEB;
+  --RED500: #E85E36;
+}
+body {
+  /* font는 추후 상의 필요 */
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+
+}
+/* ================= 공통 사항 끝 ============================ */
+
+
+/* ====== 캘린더 페이지 콘텐츠 스타일 ====== */
+.calendar {
+  /* border: 1px solid yellowgreen; */
+  width: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* margin: 50px; */
+  color: var(--GRAY900);
+  font-size: 14px;
+}
+
+
+/* ====== 캘린더 헤더 스타일 ====== */
+.header-calendar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1200px;
+  /* border: 1px solid violet; */
+  padding: 10px;
+}
+.header-calendar .year-month {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.header-calendar .nav-calendar {
+  display: flex;
+  justify-content: center;
+  /* align-content: center; */
+}
+
+.header-calendar .nav-calendar a {
+  /* border-radius: 8px; */
+  border: 1px solid var(--GRAY100);
+  padding: 3px 8px;
+  color: var(--GRAY700)
+
+}
+.header-calendar .nav-calendar a:first-child {
+  border-radius: 8px 0 0 8px;
+}
+.header-calendar .nav-calendar a .go-today {
+  font-weight: 700;
+}
+.header-calendar .nav-calendar a:last-child {
+  border-radius: 0 8px 8px 0;
+}
+.nav-calendar a:hover {
+  background: var(--GRAY100);
+  border-color: var(--GRAY300);
+}
+.header-calendar .nav-btn {
+  border: 0;
+  background: transparent;
+  /* border: 1px solid #000; */
+  /* padding: 5px 12px; */
+  font-size: 13px;
+  /* height: 25px; */
+  /* padding: 3px 10px; */
+}
+.header-calendar .nav-btn:nth-child(2) {
+  border-left: 1px solid var(--GRAY100);
+  border-right: 1px solid var(--GRAY100);
+}
+
+.header-calendar .nav-btn i {
+  font-size: 11px;
+  /* color: var(--GRAY900); */
+  padding: 1px 0 0;
+}
+
+
+
+/* ====== 캘린더 메인 스타일 ====== */ 
+.main-calendar {
+  /* border: 1px solid blue; */
+}
+/* days-containier 스타일 (요일) */
+.days-container {
+  display: flex;
+  /* margin: 5px 0 5px; */
+  color: var(--GRAY500);
+}
+.days-container .days {
+  /* border: 1px solid red; */
+  /* padding: 10px 20px; */
+  border-top: 1px solid var(--GRAY100);
+  border-right: 1px solid var(--GRAY100);
+  width: calc(100%/7);
+  padding: 7px 8px 3px;
+  /* text-align: center; */
+}
+
+/* dates-container 스타일 (날짜) */
+.dates-container {
+  display: flex;
+  flex-flow: row wrap;
+  height: 500px;
+  border: 1px solid #333333;
+}
+
+.days-container .days:nth-child(7n+1),
+.date-container .date-box:nth-child(7n+1) {
+  color: var(--RED500);
+  border-left: 1px solid var(--GRAY100);
+}
+.date-container {
+  flex-flow: row wrap;
+  display: flex;
+  width: 1400px;
+}
+
+.date-container .date-box {
+  border-bottom: 1px solid var(--GRAY100);
+  border-right: 1px solid var(--GRAY100);
+  width: calc(100% / 7);
+  height: 130px;
+  position: relative;
+  padding-top: 8px;
+}
+
+.date-container .date-box:hover {
+  background: var(--GRAY100);
+}
+
+.date-container .date-box .date-text {
+  /* font-size: 0.9em; */
+  padding: 0 10px 0;
+
+}
+/* 오늘 날짜 도형 */
+.today-circle {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--GRAY900);
+  border-radius: 50%;
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  color: #fff;
+}
+/* 이전, 다음 달은 비활성화 */
+.inactive {
+  opacity: 0.3;
+}

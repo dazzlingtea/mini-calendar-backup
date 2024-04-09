@@ -1,0 +1,279 @@
+@import url("./common.css");
+@import url("./calendar.css");
+
+/* font: Roboto, Noto Sans KR */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* font awesome */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css");
+
+/* reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input {
+  outline: none;
+  border: none;
+  color: inherit;
+  background: transparent;
+}
+
+/* common */
+* {
+  box-sizing: border-box;
+}
+
+/* color */
+:root {
+  --GRAY900: #191919;
+  --GRAY700: #666;
+  --GRAY500: #8e8e8e;
+  --GRAY300: #ccc;
+  --GRAY100: #ebebeb;
+  --RED500: #e85e36;
+}
+body {
+  /* font는 추후 상의 필요 */
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+
+/* ====================== modal common */
+
+.modal-overlay {
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  visibility: hidden;
+  /* 기본적으로 숨김 */
+}
+
+.modal-overlay:not(.hidden) {
+  visibility: visible;
+}
+
+.modal-content {
+  width: 500px;
+  height: 380px;
+  background: #fefefe;
+  position: absolute;
+  left: 50%;
+  top: 100px;
+  transform: translate(-50%, 0);
+  border-radius: 10px;
+  box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.08);
+  padding: 35px 25px 25px;
+}
+
+.modal-content .modal-close {
+  font-size: 25px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+/* ===================================== modal common end */
+
+/* ===================================== modal content */
+
+.modal-content .todo-save {
+  font-size: 15px;
+}
+
+.modal-content .todo-save h2 {
+  font-size: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.modal-content .todo-save .wrapper {
+  display: flex;
+  margin-bottom: 20px;
+  color: var(--GRAY500);
+}
+
+.modal-content .todo-save .title {
+  border-bottom: 1px solid var(--GRAY500);
+  padding-bottom: 10px;
+}
+
+.modal-content .todo-save .descript i {
+  padding-top: 10px;
+}
+
+.modal-content .todo-save .txt-wrapper {
+  width: 100%;
+  border: 0.8px solid var(--GRAY500);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.modal-content .todo-save .txt-wrapper .txt-field {
+  font-size: inherit;
+  width: inherit;
+  border: 0 none;
+  outline: 0 none;
+  resize: none;
+  background-color: transparent;
+}
+
+.modal-content .todo-save .txt-wrapper .txt-len-info {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
+  color: var(--GRAY300);
+}
+
+.modal-content .todo-save .time, .repeat {
+	display: flex;
+	align-items: center;
+}
+
+.modal-content .todo-save .time .select-time .time-btn {
+	border: 0.8px solid var(--GRAY500);
+	border-radius: 5px;
+	padding: 10px;
+	text-align: left;
+	color: inherit;
+	cursor: pointer;
+}
+
+.modal-content .todo-save .wrapper-btn {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.modal-content .todo-save button.save {
+  width: 80px;
+  height: 30px;
+  color: var(--GRAY500);
+  background: var(--GRAY100);
+}
+
+.modal-content .todo-save button.on {
+  background: #fee500;
+  color: #0a0a0a;
+  cursor: pointer;
+}
+
+.modal-content .todo-save i {
+  color: var(--GRAY700);
+  margin-right: 10px;
+}
+
+/* ================================ dropdown common */
+
+.dropdown {
+	position: relative;
+	width: 250px;
+}
+
+.dropdown .btn {
+	width: inherit;
+	font-size: inherit;
+	border: 0.8px solid var(--GRAY500);
+	border-radius: 5px;
+	padding: 10px;
+	text-align: left;
+	color: inherit;
+	cursor: pointer;
+}
+
+#drop-content {
+	width: inherit;
+	display: none;
+	position: absolute;
+	z-index: 99;
+}
+
+#drop-content.show {
+	display: block;
+}
+
+/* drop-content monthly custom style */
+
+#drop-content {
+	width: inherit;
+	background: #fff;
+	padding: 5px;
+	border: 0.8px solid var(--GRAY500);
+	border-radius: 5px;
+	box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+#drop-content .monthly {
+	width: 100%;
+	padding: 5px;
+}
+
+#drop-content .monthly .header-calendar {
+	width: inherit;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+#drop-content .monthly .header-calendar .nav-calendar {
+	width: inherit;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 3px;
+}
+
+#drop-content .monthly .header-calendar .nav-calendar button {
+	cursor: pointer;
+}
+
+#drop-content .monthly .header-calendar .nav-calendar .year-month {
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+}
+
+#drop-content .monthly .days-container {
+	margin-bottom: 3px;
+}
+
+#drop-content .monthly .days-container .days {
+	font-size: 12px;
+	border: none;
+	text-align: center;
+}
+
+#drop-content .monthly .date-container {
+	width: inherit;
+}
+
+#drop-content .monthly .date-container .date-box {
+	height: 28px;
+	cursor: pointer;
+	border: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+#drop-content .monthly .date-container .date-box span {
+	text-align: center;
+}
+
+#drop-content .monthly .date-container .circle {
+	position: static;
+}
+
+#drop-content a {
+	display: block;
+	text-decoration: none;
+	cursor: pointer;
+	border: none;
+}
+
+#drop-content a:hover {
+	cursor: pointer;
+}

@@ -4,11 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Calendar</title>
-	<link rel="stylesheet" href="./css/header.css">
-	<link rel="stylesheet" href="./css/modal.css">
-	<link rel="stylesheet" href="./css/index.css">
-	<script src="./js/calendar.js" defer></script>
+	<title>Document</title>
+	<link rel="stylesheet" href="../css/header.css">
+	<link rel="stylesheet" href="../css/modal.css">
 </head>
 
 <body>
@@ -37,10 +35,10 @@
 		<section id="side">
 			<nav class="menu">
 				<ul>
-					<li><a href="./index.html">홈</a></li>
+					<li>홈</li>
 					<li>주간</li>
-					<li><a href="./html/calendar.html">월간</a></li>
-					<li><a href="./html/todo.html">일정</a></li>
+					<li>월간</li>
+					<li>일정</li>
 				</ul>
 			</nav>
 			<div class="timer">
@@ -52,122 +50,7 @@
 			</div>
 		</section>
 		<section id="main-content">
-			<div class="container-1">
-				<div class="wrapper">
-					<div class="header">
-						<h2>To do List</h2>
-					</div>
-					<div class="todo-list">
-						<div class="box today">
-							<h3 class="title">
-								<span>오늘</span>
-								<i class="fa-solid fa-plus"></i>
-							</h3>
-							<ul class="list">
-								<li class="checked">
-									<input type="checkbox" name="" id="">
-									<span>강아지 산책 시키기</span>
-								</li>
-								<li>
-									<input type="checkbox" name="" id="">
-									<span>꽃 구경 다녀오기</span>
-								</li>
-							</ul>
-						</div>
-						<div class="box tomorrow">
-							<h3 class="title">
-								<span>내일</span>
-								<i class="fa-solid fa-plus"></i>
-							</h3>
-							<ul class="list">
-								<li class="">
-									<input type="checkbox" name="" id="">
-									<span>이불 빨래</span>
-								</li>
-								<li>
-									<input type="checkbox" name="" id="">
-									<span>수리점 방문</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="wrapper">
-					<div class="header">
-						<h2>Monthly</h2>
-					</div>
-					<div class="calendar">
-						<div class="box monthly">
-							<div class="header-calendar">
-								<!-- year-month 변수 처리 필요 -->
-								<div class="year-month">2024년 4월</div>
-								<!-- 캘린더 헤더 버튼 -->
-								<div class="nav-calendar">
-									<a href="#">
-										<button class="nav-btn go-prev">
-											<i class="fas fa-chevron-left"></i>
-										</button>
-									</a>
-									<a href="#"><button class="nav-btn go-today">오늘</button></a>
-									<a href="#">
-										<button class="nav-btn go-next">
-											<i class="fas fa-chevron-right"></i>
-										</button>
-									</a>
-								</div>
-							</div>
-							<div class="main-calendar">
-								<!-- 캘린더 요일 -->
-								<div class="days-container">
-									<div class="days">일</div>
-									<div class="days">월</div>
-									<div class="days">화</div>
-									<div class="days">수</div>
-									<div class="days">목</div>
-									<div class="days">금</div>
-									<div class="days">토</div>
-								</div>
-								<!-- 캘린더 날짜 (동적) -->
-								<div class="date-container">
-									<!--<div class="date-box"><span class="date-text">1</span></div>
-								  <div class="date-box"><span class="date-text">2</span></div>
-								  <div class="date-box"><span class="date-text">3</span></div>
-								  <div class="date-box"><span class="date-text">4</span></div>
-								  <div class="date-box">
-									<span class="date-text circle">5</span>
-								  </div>
-								  <div class="date-box"><span class="date-text">6</span></div>
-								  <div class="date-box"><span class="date-text">7</span></div>-->
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>
-			<div class="container-2">
-				<div class="wrapper">
-					<div class="header">
-						<h2>Weekly</h2>
-					</div>
-					<div class="weekly">
-						<div class="main-calendar">
-							<!-- 캘린더 요일 -->
-							<div class="days-container">
-								<div class="days">일</div>
-								<div class="days">월</div>
-								<div class="days">화</div>
-								<div class="days">수</div>
-								<div class="days">목</div>
-								<div class="days">금</div>
-								<div class="days">토</div>
-							</div>
-							<!-- 캘린더 날짜 (동적) -->
-							<div class="date-container">
-							</div>
-						</div>
-					</div>
-				</div>
+			<div>
 			</div>
 		</section>
 	</section>
@@ -222,8 +105,16 @@
 										<div class="days">토</div>
 									</div>
 									<!-- 캘린더 날짜 (동적) -->
-									<div class="date-container">
-
+									<div class="date-container  weekly-selected">
+										<div class="date-box"><span class="date-text">1</span></div>
+										<div class="date-box"><span class="date-text">2</span></div>
+										<div class="date-box"><span class="date-text">3</span></div>
+										<div class="date-box"><span class="date-text">4</span></div>
+										<div class="date-box">
+											<span class="date-text circle">5</span>
+										</div>
+										<div class="date-box"><span class="date-text">6</span></div>
+										<div class="date-box"><span class="date-text">7</span></div>
 									</div>
 								</div>
 							</div>
@@ -296,5 +187,3 @@
 		}, true);
 	</script>
 </body>
-
-</html>
