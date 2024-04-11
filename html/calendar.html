@@ -10,6 +10,10 @@
 	<link rel="stylesheet" href="../css/calendar.css">
 	<script type="module" src="../js/calendar.js" defer></script>
 	<script type="module" src="../js/calendar_todo.js" defer></script>
+	<script type="module" src="../js/localStorage.js" defer></script>
+	<script type="module" src="../js/modal.js"></script>
+	<script type="module" src="../js/app_cal.js"></script>
+	<script type="module" src="../js/app.js" defer></script>
 </head>
 
 <body>
@@ -88,16 +92,16 @@
 					</div>
 					<!-- 캘린더 날짜 (동적) -->
 					<div class="date-container">
-						<!-- <div class="date-box"><span class="date-text">1</span></div>
-						<div class="date-box"><span class="date-text">2</span></div>
-						<div class="date-box"><span class="date-text">3</span></div>
-						<div class="date-box"><span class="date-text">4</span></div>
-						<div class="date-box">
+						<!-- <div class="date-box" data-date-idx="0"><span class="date-text">1</span></div>
+						<div class="date-box" data-date-idx="1"><span class="date-text">2</span></div>
+						<div class="date-box" data-date-idx="2"><span class="date-text">3</span></div>
+						<div class="date-box" data-date-idx="3"><span class="date-text">4</span></div>
+						<div class="date-box" data-date-idx="4">
 							<span class="date-text">5</span>
 							<div class="today-circle">5</div>
 						</div>
-						<div class="date-box"><span class="date-text">6</span></div>
-						<div class="date-box"><span class="date-text">7</span></div> -->
+						<div class="date-box" data-date-idx="5"><span class="date-text">6</span></div>
+						<div class="date-box" data-date-idx="5"><span class="date-text">7</span></div> -->
 					</div>
 				</div>
 			</section>
@@ -166,11 +170,11 @@
 					<div class="dropdown select-repeat">
 						<button class="btn repeat-btn">반복 안함</button>
 						<div id="drop-content" class="content-repeat">
-							<a href='#'>매일</a>
-							<a href='#'>Menu2</a>
-							<a href='#'>Menu3</a>
-							<a href='#'>Menu4</a>
-							<a href='#'>Menu5</a>
+							<a href='#' class="repeat-option repeat-daily">매일</a>
+							<a href='#' class="repeat-option repeat-weekly">매주</a>
+							<a href='#' class="repeat-option repeat-monthly">매월</a>
+							<!-- <a href='#'>Menu4</a>
+							<a href='#'>Menu5</a> -->
 						</div>
 					</div>
 				</div>
@@ -180,53 +184,6 @@
 			</form>
 		</div>
 	</div>
-	<script>
-		/* modal event */
-		const openModalButton = document.querySelector('.add-btn-wrapper .add');
-		const $modalOverlay = document.querySelector('.modal-overlay');
-		const $modalContent = document.querySelector(".modal-content");
-		const closeModalButton = $modalContent.querySelector('.modal-close');
-		const $saveBtn = $modalContent.querySelector(".save");
-
-		openModalButton.addEventListener('click', () => {
-			$modalOverlay.classList.remove('hidden');
-		});
-
-		$saveBtn.addEventListener("click", (e) => {
-			e.preventDefault();
-			$modalOverlay.classList.add("hidden");
-		})
-
-		closeModalButton.addEventListener('click', () => {
-			$modalOverlay.classList.add('hidden');
-		});
-
-		/* dropdown calendar event */
-		const $selectTime = document.querySelector(".select-time");
-		const $contentCalendar = document.querySelector(".content-calendar");
-		const outerContent = $modalOverlay;
-
-		$selectTime.addEventListener("click", (e) => {
-			e.stopPropagation();
-			e.preventDefault();
-			$contentCalendar.classList.add("show");
-		});
-
-		/* dropdown repeat event */
-		const $selectRepeat = document.querySelector(".select-repeat");
-		const $contentRepeat = document.querySelector(".content-repeat");
-		$selectRepeat.addEventListener("click", (e) => {
-			e.stopPropagation();
-			e.preventDefault();
-			$contentRepeat.classList.add("show");
-		});
-
-		outerContent.addEventListener("click", (e) => {
-			$contentCalendar.classList.remove("show");
-			$contentRepeat.classList.remove("show");
-		}, true);
-	</script>
 </body>
-
 
 </html>
